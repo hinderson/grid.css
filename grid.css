@@ -1,15 +1,12 @@
-
-/* Settings */
-:root {
+.grid {
+    /* Settings */
     --base-item-spacing: 2rem;
     --item-spacing-small: calc(var(--base-item-spacing) * 0.5);
     --item-spacing-medium: calc(var(--base-item-spacing) * 0.75);
     --item-spacing-large: var(--base-item-spacing);
     --item-spacing-extra-large: calc(var(--base-item-spacing) * 2);
     --color-divider: #ccc;
-}
 
-.grid {
     display: flex;
     flex-flow: row wrap;
     margin: 0;
@@ -30,8 +27,8 @@
     }
 
     @media screen and (--small) {
-        margin-left: var(--item-spacing-small);
-        margin-right: var(--item-spacing-small);
+        margin-left: -(var(--item-spacing-small));
+        margin-right: -(var(--item-spacing-small));
 
         & > .grid-item {
             padding-left: var(--item-spacing-small);
@@ -67,8 +64,8 @@
     }
 
     @media screen and (--medium-only) {
-        margin-left: var(--item-spacing-medium);
-        margin-right: var(--item-spacing-medium);
+        margin-left: -(var(--item-spacing-medium));
+        margin-right: -(var(--item-spacing-medium));
 
         & > .grid-item {
             padding-left: var(--item-spacing-medium);
@@ -93,8 +90,8 @@
         }
 
         &.vertical-spacing {
-            margin-top: var(--item-spacing-medium);
-            margin-bottom: var(--item-spacing-medium);
+            margin-top: -(var(--item-spacing-medium));
+            margin-bottom: -(var(--item-spacing-medium));
 
             & > .grid-item {
                 padding-top: var(--item-spacing-medium);
@@ -104,8 +101,8 @@
     }
 
     @media screen and (--large) {
-        margin-left: var(--item-spacing-large);
-        margin-right: var(--item-spacing-large);
+        margin-left: -(var(--item-spacing-large));
+        margin-right: -(var(--item-spacing-large));
 
         & > .grid-item {
             padding-left: var(--item-spacing-large);
@@ -164,8 +161,8 @@
         }
 
         &.vertical-spacing {
-            margin-top: var(--item-spacing-large);
-            margin-bottom: var(--item-spacing-large);
+            margin-top: -(var(--item-spacing-large));
+            margin-bottom: -(var(--item-spacing-large));
 
             & > .grid-item {
                 padding-top: var(--item-spacing-large);
@@ -185,8 +182,8 @@
     }
 
     @media screen and (--wide) {
-        margin-left: var(--item-spacing-extra-large);
-        margin-right: var(--item-spacing-extra-large);
+        margin-left: -(var(--item-spacing-extra-large));
+        margin-right: -(var(--item-spacing-extra-large));
 
         & > .grid-item {
             padding-left: var(--item-spacing-extra-large);
@@ -212,8 +209,8 @@
         }
 
         &.vertical-spacing {
-            margin-top: var(--item-spacing-extra-large);
-            margin-bottom: var(--item-spacing-extra-large);
+            margin-top: -(var(--item-spacing-extra-large));
+            margin-bottom: -(var(--item-spacing-extra-large));
 
             & > .grid-item {
                 padding-top: var(--item-spacing-extra-large);
