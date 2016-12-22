@@ -1,12 +1,14 @@
-.grid {
-    /* Settings */
+/* Settings */
+:root {
     --base-item-spacing: 2rem;
     --item-spacing-small: calc(var(--base-item-spacing) * 0.5);
     --item-spacing-medium: calc(var(--base-item-spacing) * 0.75);
     --item-spacing-large: var(--base-item-spacing);
     --item-spacing-extra-large: calc(var(--base-item-spacing) * 2);
     --color-divider: #ccc;
+}
 
+.grid {
     display: flex;
     flex-flow: row wrap;
     margin: 0;
@@ -53,8 +55,8 @@
         }
 
         &.vertical-spacing {
-            margin-top: -calc(var(--item-spacing-small) * 0.5);
-            margin-bottom: -calc(var(--item-spacing-small) * 0.5);
+            margin-top: calc(var(--item-spacing-small) * 0.5 * -1);
+            margin-bottom: calc(var(--item-spacing-small) * 0.5 * -1);
 
             & > .grid-item {
                 padding-top: var(--item-spacing-small);
@@ -171,8 +173,8 @@
         }
 
         &.wide-gutters {
-            margin-left: -calc(var(--item-spacing-large) * 1.5);
-            margin-right: -calc(var(--item-spacing-large) * 1.5);
+            margin-left: calc(var(--item-spacing-large) * 1.5 * -1);
+            margin-right: calc(var(--item-spacing-large) * 1.5 * -1);
 
             & > .grid-item {
                 padding-left: calc(var(--item-spacing-large) * 1.5);
@@ -219,8 +221,8 @@
         }
 
         &.wide-gutters {
-            margin-left: -calc(var(--item-spacing-extra-large) * 1.5);
-            margin-right: -calc(var(--item-spacing-extra-large) * 1.5);
+            margin-left: calc(var(--item-spacing-extra-large) * 1.5 * -1);
+            margin-right: calc(var(--item-spacing-extra-large) * 1.5 * -1);
 
             & > .grid-item {
                 padding-left: calc(var(--item-spacing-extra-large) * 1.5);
