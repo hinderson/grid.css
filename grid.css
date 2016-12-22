@@ -1,0 +1,324 @@
+
+/* Settings */
+:root {
+    --base-item-spacing: 2rem;
+    --item-spacing-small: calc(var(--base-item-spacing) * 0.5);
+    --item-spacing-medium: calc(var(--base-item-spacing) * 0.75);
+    --item-spacing-large: var(--base-item-spacing);
+    --item-spacing-extra-large: calc(var(--base-item-spacing) * 2);
+    --color-divider: #ccc;
+}
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    & > .grid-item {
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+        box-sizing: border-box;
+    }
+
+    @media screen and (--small) {
+        margin-left: var(--item-spacing-small);
+        margin-right: var(--item-spacing-small);
+
+        & > .grid-item {
+            padding-left: var(--item-spacing-small);
+            padding-right: var(--item-spacing-small);
+        }
+
+        &.small-2 > .grid-item {
+            width: 50%;
+        }
+
+        &.small-3 > .grid-item {
+            width: 33.333333%;
+        }
+
+        &.small-4 > .grid-item {
+            width: 25%;
+        }
+
+        &.reversed-small {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        &.vertical-spacing {
+            margin-top: -calc(var(--item-spacing-small) * 0.5);
+            margin-bottom: -calc(var(--item-spacing-small) * 0.5);
+
+            & > .grid-item {
+                padding-top: var(--item-spacing-small);
+                padding-bottom: var(--item-spacing-small);
+            }
+        }
+    }
+
+    @media screen and (--medium-only) {
+        margin-left: var(--item-spacing-medium);
+        margin-right: var(--item-spacing-medium);
+
+        & > .grid-item {
+            padding-left: var(--item-spacing-medium);
+            padding-right: var(--item-spacing-medium);
+        }
+
+        &.medium-2 > .grid-item {
+            width: 50%;
+        }
+
+        &.medium-3 > .grid-item {
+            width: 33.333333%;
+        }
+
+        &.medium-4 > .grid-item {
+            width: 25%;
+        }
+
+        &.reversed-medium {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        &.vertical-spacing {
+            margin-top: var(--item-spacing-medium);
+            margin-bottom: var(--item-spacing-medium);
+
+            & > .grid-item {
+                padding-top: var(--item-spacing-medium);
+                padding-bottom: var(--item-spacing-medium);
+            }
+        }
+    }
+
+    @media screen and (--large) {
+        margin-left: var(--item-spacing-large);
+        margin-right: var(--item-spacing-large);
+
+        & > .grid-item {
+            padding-left: var(--item-spacing-large);
+            padding-right: var(--item-spacing-large);
+        }
+
+        &.large-2 {
+            & > .grid-item {
+                width: 50%;
+            }
+
+            &.with-dividers > .grid-item:nth-of-type(2) {
+                border-left: 1px solid var(--color-divider);
+            }
+        }
+
+        &.large-3 {
+            & > .grid-item {
+                width: 33.333333%;
+            }
+
+            &.with-dividers > .grid-item:nth-of-type(2),
+            &.with-dividers > .grid-item:nth-of-type(3) {
+                border-left: 1px solid var(--color-divider);
+            }
+        }
+
+        &.large-4 {
+            & > .grid-item {
+                width: 25%;
+            }
+
+            &.with-dividers > .grid-item:nth-of-type(2),
+            &.with-dividers > .grid-item:nth-of-type(3),
+            &.with-dividers > .grid-item:nth-of-type(4) {
+                border-left: 1px solid var(--color-divider);
+            }
+        }
+
+        &.large-5 {
+            & > .grid-item {
+                width: 20%;
+            }
+
+            &.with-dividers > .grid-item:nth-of-type(2),
+            &.with-dividers > .grid-item:nth-of-type(3),
+            &.with-dividers > .grid-item:nth-of-type(4),
+            &.with-dividers > .grid-item:nth-of-type(5) {
+                border-left: 1px solid var(--color-divider);
+            }
+        }
+
+        &.reversed-large {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        &.vertical-spacing {
+            margin-top: var(--item-spacing-large);
+            margin-bottom: var(--item-spacing-large);
+
+            & > .grid-item {
+                padding-top: var(--item-spacing-large);
+                padding-bottom: var(--item-spacing-large);
+            }
+        }
+
+        &.wide-gutters {
+            margin-left: -calc(var(--item-spacing-large) * 1.5);
+            margin-right: -calc(var(--item-spacing-large) * 1.5);
+
+            & > .grid-item {
+                padding-left: calc(var(--item-spacing-large) * 1.5);
+                padding-right: calc(var(--item-spacing-large) * 1.5);
+            }
+        }
+    }
+
+    @media screen and (--wide) {
+        margin-left: var(--item-spacing-extra-large);
+        margin-right: var(--item-spacing-extra-large);
+
+        & > .grid-item {
+            padding-left: var(--item-spacing-extra-large);
+            padding-right: var(--item-spacing-extra-large);
+        }
+
+        &.wide-2 {
+            & > .grid-item {
+                width: 50%;
+            }
+        }
+
+        &.wide-3 {
+            & > .grid-item {
+                width: 33.333333%;
+            }
+        }
+
+        &.wide-4 {
+            & > .grid-item {
+                width: 25%;
+            }
+        }
+
+        &.vertical-spacing {
+            margin-top: var(--item-spacing-extra-large);
+            margin-bottom: var(--item-spacing-extra-large);
+
+            & > .grid-item {
+                padding-top: var(--item-spacing-extra-large);
+                padding-bottom: var(--item-spacing-extra-large);
+            }
+        }
+
+        &.wide-gutters {
+            margin-left: -calc(var(--item-spacing-extra-large) * 1.5);
+            margin-right: -calc(var(--item-spacing-extra-large) * 1.5);
+
+            & > .grid-item {
+                padding-left: calc(var(--item-spacing-extra-large) * 1.5);
+                padding-right: calc(var(--item-spacing-extra-large) * 1.5);
+            }
+        }
+    }
+
+    /* Masonry layout */
+    @supports (-moz-column-count: 2) or (-webkit-column-count: 2) or (column-count: 2) {
+        &.grid-masonry {
+            display: block;
+
+            @media screen and (--medium) {
+                column-gap: 0;
+                column-fill: balance;
+            }
+
+            @media screen and (--medium-only) {
+                &.medium-2 {
+                    column-count: 2;
+                }
+
+                &.medium-3 {
+                    column-count: 3;
+                }
+
+                &.medium-4 {
+                    column-count: 4;
+                }
+            }
+
+            @media screen and (--large) {
+                &.large-2 {
+                    column-count: 2;
+                }
+
+                &.large-3 {
+                    column-count: 3;
+                }
+
+                &.large-4 {
+                    column-count: 4;
+                }
+            }
+
+            > .grid-item {
+                width: 100%;
+            }
+        }
+    }
+
+    @supports (-webkit-column-break-inside: avoid) or (-webkit-break-inside: avoid) or (break-inside: avoid) {
+        .grid-masonry > .grid-item {
+            display: block;
+            -webkit-column-break-inside: avoid;
+            -webkit-break-inside: avoid;
+            break-inside: avoid;
+        }
+    }
+
+    /* Hacky way of supporting reversed element order and stretched divider height for browsers that support it */
+    @supports (display: -webkit-flex) or (display: -moz-flex) or (display: flex) {
+        @media screen and (--large) {
+            &.reversed-large {
+                &.large-2 {
+                    &.with-dividers > .grid-item:nth-of-type(1) {
+                        border-left: 1px solid var(--color-divider);
+                    }
+
+                    &.with-dividers > .grid-item:nth-of-type(2) {
+                        border-left: 0;
+                    }
+                }
+
+                &.large-3 {
+                    &.with-dividers > .grid-item:nth-of-type(1) {
+                        border-left: 1px solid var(--color-divider);
+                    }
+
+                    &.with-dividers > .grid-item:nth-of-type(3) {
+                        border-left: 0;
+                    }
+                }
+
+                &.large-4 {
+                    &.with-dividers > .grid-item:nth-of-type(1) {
+                        border-left: 1px solid var(--color-divider);
+                    }
+
+                    &.with-dividers > .grid-item:nth-of-type(4) {
+                        border-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "grid.css",
+  "version": "1.0.0",
+  "style": "grid.css",
+  "files": [
+    "LICENSE",
+    "grid.css"
+  ],
+  "main": "grid.css",
+  "repository": "https://github.com/hinderson/grid.css.git",
+  "author": "Mattias Hinderson <mattias@hinderson.com>",
+  "license": "MIT"
+}
