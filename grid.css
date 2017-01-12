@@ -28,6 +28,16 @@
         box-sizing: border-box;
     }
 
+    &.no-gutters {
+        margin-left: 0;
+        margin-right: 0;
+
+        & > .grid-item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
     @media screen and (--small) {
         margin-left: calc(var(--item-spacing-small) * -1);
         margin-right: calc(var(--item-spacing-small) * -1);
@@ -54,7 +64,7 @@
             flex-direction: row-reverse;
         }
 
-        &.vertical-spacing {
+        &.vertical-gutters {
             margin-top: calc(var(--item-spacing-small) * 0.5 * -1);
             margin-bottom: calc(var(--item-spacing-small) * 0.5 * -1);
 
@@ -91,7 +101,7 @@
             flex-direction: row-reverse;
         }
 
-        &.vertical-spacing {
+        &.vertical-gutters {
             margin-top: calc(var(--item-spacing-medium) * -1);
             margin-bottom: calc(var(--item-spacing-medium) * -1);
 
@@ -162,7 +172,7 @@
             flex-direction: row-reverse;
         }
 
-        &.vertical-spacing {
+        &.vertical-gutters {
             margin-top: calc(var(--item-spacing-large) * -1);
             margin-bottom: calc(var(--item-spacing-large) * -1);
 
@@ -210,7 +220,7 @@
             }
         }
 
-        &.vertical-spacing {
+        &.vertical-gutters {
             margin-top: calc(var(--item-spacing-extra-large) * -1);
             margin-bottom: calc(var(--item-spacing-extra-large) * -1);
 
